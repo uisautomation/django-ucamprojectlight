@@ -103,10 +103,10 @@
                             <p class="campl-mobile-parent"><a href="{{ breadcrumbs.0.url }}"><span class="campl-back-btn campl-menu-indicator"></span>{{ breadcrumbs.0.name }}</a></p>
                             -->
                         {% endblock %}
-                        <p class="campl-page-title">{{ site_name|default:"A Django App for Project Light"}}</p>
+                        <p class="campl-page-title">{% block site_name %}A Django App for Project Light{% endblock %}</p>
                         {% block search_bar %}
                             <div class="campl-column6">
-                                <form action="{{ search_action|default:'#'}}" method="get" >
+                                <form action="{% block search_action %}#{% endblock %}" method="get" >
                                     <fieldset>
                                         <div class="campl-control-group">
                                             <label for="query" class="visuallyhidden" onfocus="used=true;">query</label>
@@ -132,7 +132,7 @@
                     {% block subtitle_div %}
                         <div class="campl-column12">
                             <div class="campl-content-container">
-                                <h1>{{ subtitle|default:"Subtitle of my Django app"}}</h1>
+                                <h1>{% block subtitle %}Subtitle of my Django app{% endblock %}</h1>
                             </div>
                         </div>
                     {% endblock %}
@@ -192,7 +192,9 @@
 			<div class="campl-wrap clearfix">
 				<div class="campl-column6 campl-footer-navigation">
 					<p class="campl-app-footer-content">
-                        {{ blurb|default:'This Django app is provided and managed by <a href="http://www.cam.ac.uk">somebody in Cambridge (probably)</a>.'}}
+                        {% block blurb %}
+                            This Django app is provided and managed by <a href="http://www.cam.ac.uk">somebody in Cambridge (probably)</a>.
+                        {% endblock %}
                     </p>
 				</div>
 				<div class="campl-column3 campl-footer-navigation">

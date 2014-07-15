@@ -15,17 +15,10 @@ Yo only need to add to your settings.py this application.
 ````
 
 
-## Variables
-
-- site_name: The full name of the site to show it in the header of the page.
-- subtitle: A subtitle to be shown below the site_name in the page header. Shown inside subtitle_div block.
-- search_action: action propierty of the form tag of the search box. Shown inside search_bar block.
-- blurb: The text shown in the footer. It uses the first half of the width of the footer.
-
-
 ## Customization using blocks
 
 - campl\_block\_head: This block rewrites the whole head tag of the template.
+- head_title: The full name of the site that will be shown in the browser toolbar.
 - additional\_head: This block is reserverd to load extra css or js in case you are using extensions to the base Project Light app template.
 - app\_head: If your application is using their own javascript and stylesheets, load them using this block.
 - campl\_page\_header: This block rewrites the whole page header of the template.
@@ -39,13 +32,18 @@ Yo only need to add to your settings.py this application.
     <a href="http://www.cam.ac.uk/about-the-university/">My Django app</a>
 </li>
 ````
+
+- site_name: The full name of the site to show it in the header of the page.
 - search\_bar: Overwrite this block in case you do not want a search box in your app.
+- search_action: action propierty of the form tag of the search box. Shown inside search_bar block.
 - campl\_tabs_header: Overwrite this block in case that your app does not use tabs neither have a subtitle in the page header.
 - subtitle\_div: Overwrite this block in case you do not want to show a subtitle in the header. The subtitle is only shown if the campl\_tabs\_header has not been overwritten.
+- subtitle: A subtitle to be shown below the site_name in the page header. Shown inside subtitle_div block.
 - tabs: Overwrite this block in case that your app does not use tabs.
 - page\_content: In this block the page content should be written if you do not want to use the contant\_column blocks.
 - content\_column\_1..content\_column\_12: Project light is responsive and uses a 12 columns grid system (like twitter bootstrap). The django-ucamprojectlight offers 12 blocks in case you want to use up to 12 different columns. If you just want to use n columns because columns are wider than 1 unit, you can use the n blocks wanted.
 - local\_footer: This block rewrites the whole page footer. Half of the footer is ocuppied by the variable blurb, the other half is divided into two, footer1 and footer2.
+- blurb: The text shown in the footer. It uses the first half of the width of the footer.
 - footer1: Usually used for the Help link. 
 - footer2: Usually used for the Privacy \& cookie policy link. 
 - global\_footer: This block contains the whole global footer.
