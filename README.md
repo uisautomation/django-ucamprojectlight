@@ -1,40 +1,82 @@
-# If your Project Light page uses tabs as part of its subheading (like the "search" page)
-# define them here, along with their destinations, and then add
-# TEMPLATE_CONTEXT_PROCESSORS = ('myapp.campl_context_processors.tabs',)
-# to your settings.py
+# Introduction
+
+This app allows you to include the University of Cambridge's Project Light theme to your Django apps in a very easy way.
+
+
+## Usage
+
+Yo only need to add to your settings.py this application.
+````python
+    INSTALLED_APPS = (
+        ...
+        'ucamprojectlight',
+        ...
+    )
+````
+
+
+## Variables
+
+- site_name: The full name of the site to show it in the header of the page.
+- subtitle: A subtitle to be shown below the site_name in the page header. Shown inside subtitle_div block.
+- search_action: action propierty of the form tag of the search box. Shown inside search_bar block.
+- blurb: The text shown in the footer. It uses the first half of the width of the footer.
+
+
+## Customization using blocks
+
+- campl\_block\_head: This block rewrites the whole head tag of the template.
+- additional\_head: This block is reserverd to load extra css or js in case you are using extensions to the base Project Light app template.
+- app\_head: If your application is using their own javascript and stylesheets, load them using this block.
+- campl\_page\_header: This block rewrites the whole page header of the template.
+- all\_breadcrumbs: This block rewrites the whole breadcrumb section in case you do not want to include it in your app.
+- static\_breadcrumbs: This block includes the fixed breadcrumbs of your application (those that will be always shown independent from the page/view). The default is:
+````html
+<li>
+    <a href="http://www.cam.ac.uk/">University of Cambridge</a>
+</li>
+<li>
+    <a href="http://www.cam.ac.uk/about-the-university/">My Django app</a>
+</li>
+````
+- search\_bar: Overwrite this block in case you do not want a search box in your app.
+- campl\_tabs_header: Overwrite this block in case that your app does not use tabs neither have a subtitle in the page header.
+- subtitle\_div: Overwrite this block in case you do not want to show a subtitle in the header. The subtitle is only shown if the campl\_tabs\_header has not been overwritten.
+- tabs: Overwrite this block in case that your app does not use tabs.
+- page\_content: In this block the page content should be written if you do not want to use the contant\_column blocks.
+- content\_column\_1..content\_column\_12: Project light is responsive and uses a 12 columns grid system (like twitter bootstrap). The django-ucamprojectlight offers 12 blocks in case you want to use up to 12 different columns. If you just want to use n columns because columns are wider than 1 unit, you can use the n blocks wanted.
+- local\_footer: This block rewrites the whole page footer. Half of the footer is ocuppied by the variable blurb, the other half is divided into two, footer1 and footer2.
+- footer1: Usually used for the Help link. 
+- footer2: Usually used for the Privacy \& cookie policy link. 
+- global\_footer: This block contains the whole global footer.
+- campl\_foot\_js: A section a the end of the body tag to load lazy javascript files.
+
+
+## Breadcrumbs
+
+The default template include breadcrumbs to help with the navigation in the page. Application-specific breadcrumbs are handled by a dictionary variable "breadcrumbs" passed to the template like:
+````python
+    breadcrumbs = {}
+    breadcrumbs[0] = dict(name='Page of my cool app', url='http://my.cool.app/page/')
+    breadcrumbs[1] = dict(name='Subpage of my cool app', url='http://my.cool.app/page/subthingy/')
+    ...
+    return render_to_response('ucamprojectlight.html', {'breadcrumbs':breadcrumbs, ...})
+````
+
+## Tabs
+
+If your Project Light page uses tabs as part of its subheading (like the "search" page) define them in a python file, 
+along with their destinations, and then add this python file to TEMPLATE\_CONTEXT\_PROCESSORS in your settings.py
+
+````python
 def tabs(request):
     tabs = {}
     tabs[0] = dict(name="Main",url='index')
     tabs[1] = dict(name="Example",url='example')
     tabs[2] = dict(name="Test",url='test')
     return {'tabs': tabs}
-    
-    
-def example(request, active_tab_name):
-    breadcrumbs = {}
-    # This is just a demo.
-    # See campl-page-header.html for more information about how to use breadcrumbs.
-    breadcrumbs[0] = dict(name="Breadcrumb", url='http://www.cam.ac.uk/')
-    return render_to_response('campl.html', {'breadcrumbs':breadcrumbs, 'active_tab_name':active_tab_name},context_instance=RequestContext(request))
-    
-    
-# BEGIN campl common settings
-# campl needs to be able to find templates
-import os.path
-TEMPLATE_DIRS += (
-    os.path.join(os.path.dirname(__file__), 'campl-templates').replace('\\','/'),
-)
+````
 
-# make static files work in development
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATICFILES_DIRS += (
-    PROJECT_ROOT + '/campl-static/',
-)
-# END campl common settings
-
-# Now, whatever app you are running, you'll need a copy of this in it if you want to use tabs. That means
-# physically copying it into your project folder, and updating the path. I haven't worked out a way around
-# this yet. -rwhb2
-
-# campl tabs requires a new context preprocessor
-TEMPLATE_CONTEXT_PROCESSORS = ('campl.campl_context_processors.tabs',)
+````python
+TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + ('myapp.ucamprojectlight_context_processors.tabs',)
+````
