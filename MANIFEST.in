@@ -3,5 +3,5 @@ include README.md
 include AUTHORS
 recursive-include ucamprojectlight/static *
 recursive-include ucamprojectlight/templates *
-recursive-include ucamprojectlight/campl_jquery_ui-static *
-recursive-include ucamprojectlight/campl_jquery_ui-templates *
+#recursive-include ucamprojectlight/campl_jquery_ui-static *
+#recursive-include ucamprojectlight/campl_jquery_ui-templates *
