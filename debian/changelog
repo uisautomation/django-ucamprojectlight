@@ -1,5 +1,5 @@
-django-ucamprojectlight (1.0-1) unstable; urgency=low
+django-ucamprojectlight (1.0) unstable; urgency=low
 
   * Initial debianisation
 
- -- Information Systems Group, University Information Services, University of Cambridge <information-systems@ucs.cam.ac.uk>  Fri, 14 Jul 2014 12:08:38 +0100
+ -- Abraham Martin <amc203@cam.ac.uk>  Tue, 15 Jul 2014 17:32:04 +0100
