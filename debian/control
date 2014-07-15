@@ -1,0 +1,11 @@
+Source: django-ucamprojectlight
+Maintainer: Information Systems Group, University Information Services, University of Cambridge <information-systems@ucs.cam.ac.uk>
+Section: python
+Priority: optional
+Build-Depends: python-setuptools, python-all (>= 2.6.6-3), debhelper (>=9)
+Standards-Version: 3.9.1
+
+Package: python-django-ucamprojectlight
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: A Django authentication backend for Ucam-WebAuth a.k.a. Raven

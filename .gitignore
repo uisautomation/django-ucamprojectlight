@@ -1,0 +1,6 @@
+*.pyc
+.idea
+dist
+.DS_Store
+django_ucamprojectlight.egg-info
+MANIFEST
