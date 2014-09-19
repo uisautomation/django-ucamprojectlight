@@ -17,7 +17,7 @@ Yo only need to add to your settings.py this application.
 Create a template that extends ucamprojectlight.html and customize it using the corresponding blocks. 
 
 You can create a global template for your project with common customizations to all your other templates. Therefore
-you will only need to extend from this global common template instead of writting all the customizations in each 
+you will only need to extend from this global common template instead of writing all the customizations in each 
 template.
 
 It is worth to mention that even if you create a global customized template and extend this template in all your other 
