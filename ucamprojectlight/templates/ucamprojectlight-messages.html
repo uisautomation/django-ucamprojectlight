@@ -1,7 +1,7 @@
 {# This template should be included somewhere in the page where you want #}
 {# messages from Django's messages framework to be displayed. #}
 {# These messages are called "notifications" in Project Light: #}
-{# http://comms.group.cam.ac.uk/Project-Light/components/inpage-components/notifications.html #}
+{# http://www.websupport.cam.ac.uk/Project-Light/components/inpage-components/notifications.html #}
 {% for message in messages %}
 {% if message.level >= 40 %}{# Django "error" becomes PL "warning". #}
 <div class="campl-notifications-panel campl-warning-panel
