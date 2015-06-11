@@ -1,0 +1,40 @@
+{# This template should be included somewhere in the page where you want #}
+{# messages from Django's messages framework to be displayed. #}
+{# These messages are called "notifications" in Project Light: #}
+{# http://comms.group.cam.ac.uk/Project-Light/components/inpage-components/notifications.html #}
+{% for message in messages %}
+{% if message.level >= 40 %}{# Django "error" becomes PL "warning". #}
+<div class="campl-notifications-panel campl-warning-panel
+            campl-notifications-container clearfix">
+  <div class="campl-column4">
+    <p class="campl-notifications-icon campl-warning-icon">Warning:</p>
+  </div>
+  <div class="campl-column8"><p>{{ message }}</p></div>
+</div>
+{% elif message.level >= 30 %}{# Django "warning" becomes PL "alert". #}
+<div class="campl-notifications-panel campl-alert-panel
+            campl-notifications-container clearfix">
+  <div class="campl-column4">
+    <p class="campl-notifications-icon campl-alert-icon">Alert:</p>
+  </div>
+  <div class="campl-column8"><p>{{ message }}</p></div>
+</div>
+{% elif message.level >= 25 %}{# Django "success" becomes PL "success". #}
+<div class="campl-notifications-panel campl-success-panel
+            campl-notifications-container clearfix">
+  <div class="campl-column4">
+    <p class="campl-notifications-icon campl-success-icon">Success:</p>
+  </div>
+  <div class="campl-column8"><p>{{ message }}</p></div>
+</div>
+{% elif message.level >= 20 %}{# Django "info" becomes PL "information". #}
+<div class="campl-notifications-panel campl-information-panel
+            campl-notifications-container clearfix">
+  <div class="campl-column4">
+     <p class="campl-notifications-icon campl-information-icon">Success:</p>
+  </div>
+  <div class="campl-column8"><p>{{ message }}</p></div>
+</div>
+{# Lower levels of message aren't displayed at all. #}
+{% endif %}
+{% endfor %}

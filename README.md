@@ -103,3 +103,14 @@ To get a Project Light style pagination control, include this in your page:
 This uses the standard Django pagination context variables added by
 MultipleObjectMixin, so that you can turn it on in a ListView by
 just adding a paginate_by variable to your view class.
+
+## Messages
+
+If you want Django messages to appear in your application, include this
+at the point in your page where you want them to appear:
+
+````python
+{% include ucamprojectlight-messages.html %}
+````
+
+They will appear as standard Project Light notifications.
