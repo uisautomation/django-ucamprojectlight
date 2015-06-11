@@ -91,3 +91,15 @@ def tabs(request):
 ````python
 TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + ('myapp.ucamprojectlight_context_processors.tabs',)
 ````
+
+## Pagination
+
+To get a Project Light style pagination control, include this in your page:
+
+````python
+{% include ucamprojectlight-pagination.html %}
+````
+
+This uses the standard Django pagination context variables added by
+MultipleObjectMixin, so that you can turn it on in a ListView by
+just adding a paginate_by variable to your view class.
