@@ -8,6 +8,8 @@ setup(
     description='A Django module to use the template system of the University of Cambridge: Project light',
     long_description=open('README.rst').read(),
     url='https://git.csx.cam.ac.uk/x/ucs/raven/django-ucamprojectlight.git',
+    # When changing this version number, remember to update
+    # django-ucamprojectlight.spec and debian/changelog.
     version='1.1',
     license='MIT',
     author='Information Systems Group, University Information Services, University of Cambridge',
