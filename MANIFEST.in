@@ -1,6 +1,7 @@
 include LICENSE
 include README.md
 include AUTHORS
+include django-ucamprojectlight.spec
 recursive-include ucamprojectlight/static *
 recursive-include ucamprojectlight/templates *
 #recursive-include ucamprojectlight/campl_jquery_ui-static *
