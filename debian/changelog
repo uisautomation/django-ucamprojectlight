@@ -1,3 +1,18 @@
+django-ucamprojectlight (1.2) unstable; urgency=low
+
+  * Add support for messages (called notifications in Project Light).
+  * Add support for pagination.
+  * Add RPM packaging.
+
+  * remove spurious executable bits
+  * comment our jquery
+  * packaging tweaks
+  * ucam logo local
+  * bettter README
+  * minor typo fix
+
+ -- Ben Harris <bjh21@cam.ac.uk>  Fri, 12 Jun 2015 16:46:11 +0100
+
 django-ucamprojectlight (1.0) unstable; urgency=low
 
   * Initial debianisation

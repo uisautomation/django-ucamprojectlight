@@ -1,5 +1,5 @@
 Name: django-ucamprojectlight
-Version: 1.1
+Version: 1.2
 Release: 1
 Summary: University of Cambridge "Project Light" Web templates for Django
 Source: %{name}-%{version}.tar.gz

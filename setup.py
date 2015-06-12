@@ -10,7 +10,7 @@ setup(
     url='https://git.csx.cam.ac.uk/x/ucs/raven/django-ucamprojectlight.git',
     # When changing this version number, remember to update
     # django-ucamprojectlight.spec and debian/changelog.
-    version='1.1',
+    version='1.2',
     license='MIT',
     author='Information Systems Group, University Information Services, University of Cambridge',
     author_email='information-systems@ucs.cam.ac.uk',
