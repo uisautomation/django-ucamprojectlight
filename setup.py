@@ -12,7 +12,7 @@ setup(
     # django-ucamprojectlight.spec and debian/changelog.
     version='1.2',
     license='MIT',
-    author='Information Systems Group, University Information Services, University of Cambridge',
+    author='University of Cambridge',
     author_email='information-systems@ucs.cam.ac.uk',
     packages=find_packages(),
     include_package_data=True,
