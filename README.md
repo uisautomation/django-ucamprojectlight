@@ -1,5 +1,7 @@
 # Introduction
 
+> **This repository has moved to https://gitlab.developers.cam.ac.uk/uis/devops/django/ucamprojectlight**
+
 This app allows you to include the University of Cambridge's Project Light theme to your Django apps in a very easy way.
 
 
